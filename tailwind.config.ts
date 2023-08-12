@@ -8,6 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        'bg': '#1C1E1F',
+        'dark-blue': '#2F3E46',
+        'blue': '#354F52',
+        'light-blue': '#52796F',
+        'green': '#84A98C',
+        'grey': '#CAD2C5',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -15,6 +25,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+      require("@tailwindcss/typography"),
+      require("daisyui")
+  ],
 }
 export default config
