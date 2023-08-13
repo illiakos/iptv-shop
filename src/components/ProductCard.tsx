@@ -8,7 +8,7 @@ export default function ProductCard() {
 
     const [addedToCart, setAddedToCart] = useState<boolean>(false)
     return(
-        <div className="card w-80 bg-base-100 shadow-xl">
+        <div className="card lg:w-96 w-fit bg-base-100 shadow-xl">
             <div className={"relative w-full pb-64"}>
                 <Image
                     draggable={false}
@@ -32,7 +32,7 @@ export default function ProductCard() {
                     }
 
                 </div>
-                <button onClick={(() => {
+                <button className={"btn btn-primary mt-4"} onClick={(() => {
                     checkout({
                     lineItems: [
                         {

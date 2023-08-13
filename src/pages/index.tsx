@@ -11,7 +11,7 @@ export default function Home() {
       className={`flex flex-col bg-bg h-screen`}
     >
       <Navbar/>
-      <section className={"mx-28 mt-8"}>
+      <section className={"mx-8 lg:mx-28 mt-8"}>
         <ProductCard/>
       </section>
     </main>
