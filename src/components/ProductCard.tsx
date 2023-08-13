@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import {BsCartPlus, BsCartFill} from 'react-icons/bs';
 import {useState} from "react";
+import { checkout } from "../../checkout";
 
 export default function ProductCard() {
 
@@ -31,6 +32,16 @@ export default function ProductCard() {
                     }
 
                 </div>
+                <button onClick={(() => {
+                    checkout({
+                    lineItems: [
+                        {
+                            price: "price_1NeaDlK1pNgR6R0dPujxjUL7",
+                            quantity: 1
+                        }
+                    ]
+                    })
+                })}>Buy</button>
             </div>
         </div>
     )
