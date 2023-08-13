@@ -36,7 +36,7 @@ export default function ProductCard() {
                     checkout({
                     lineItems: [
                         {
-                            price: "price_1NeaDlK1pNgR6R0dPujxjUL7",
+                            price: "price_1NegExK1pNgR6R0dFFLVGRNd",
                             quantity: 1
                         }
                     ]
