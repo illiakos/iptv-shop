@@ -15,16 +15,18 @@ export default function ProductCard() {
                     className="rounded-t-2xl"
                     layout={'fill'}
                     objectFit={'cover'}
-                    src={'/product-1.png'}
+                    src={'/product-2.jpg'}
                     alt="productImage"
                 />
             </div>
             <div className="card-body">
-                <h2 className="card-title">Телевізор Ergo 43GUS6500
+                <h2 className="card-title">XIAOMI MI BOX S MAX 4K ULTRA HD SMART 2
                 </h2>
-                <p>Супер-пупер ультра-модний телевізор без смс і реєстрації</p>
+                <p>В упаковці:
+                    Xiaomi TV Box S (2 покоління): 1...
+                </p>
                 <div className="card-actions flex justify-between items-end">
-                    <h2 className="text-2xl font-bold">200$</h2>
+                    <h2 className="text-2xl font-bold">50$</h2>
                     {addedToCart ?
                         <BsCartPlus className={"text-2xl"} onClick={() => setAddedToCart(false)}/>
                         :
@@ -36,7 +38,7 @@ export default function ProductCard() {
                     checkout({
                     lineItems: [
                         {
-                            price: "price_1NegNAK1pNgR6R0d1Du4Zng7",
+                            price: "price_1NfSITK1pNgR6R0d72Rw7NFj",
                             quantity: 1
                         }
                     ]
