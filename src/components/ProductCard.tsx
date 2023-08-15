@@ -3,34 +3,45 @@ import Image from "next/image";
 import {BsCartPlus, BsCartFill} from 'react-icons/bs';
 import {useState} from "react";
 import { checkout } from "../../checkout";
+import {useRouter} from "next/router";
 
-export default function ProductCard() {
+interface ProductCardProps {
+    url: string;
+    image: string;
+    title: string,
+    description: string;
+    price: string;
+    stripePrice: string;
+}
+
+export default function ProductCard({url, image, title, description, price, stripePrice} :ProductCardProps) {
+
+    const router = useRouter()
 
     const [addedToCart, setAddedToCart] = useState<boolean>(false)
     return(
-        <div className="card lg:w-96 w-fit bg-base-100 shadow-xl">
-            <div className={"relative w-full pb-64"}>
+        <div className="card w-full bg-base-100 shadow-xl">
+            <div className={"relative w-full lg:pb-56 pb-96"}>
                 <Image
                     draggable={false}
                     className="rounded-t-2xl"
                     layout={'fill'}
                     objectFit={'cover'}
-                    src={'/product-2.jpg'}
+                    src={image}
                     alt="productImage"
                 />
             </div>
             <div className="card-body">
-                <h2 className="card-title">XIAOMI MI BOX S MAX 4K ULTRA HD SMART 2
+                <h2 className="card-title truncate cursor-pointer" onClick={()=>router.push(`/products${url}`)}>{title}
                 </h2>
-                <p>В упаковці:
-                    Xiaomi TV Box S (2 покоління): 1...
+                <p className={"truncate cursor-pointer"} onClick={()=>router.push(`/products${url}`)}>{description}
                 </p>
                 <div className="card-actions flex justify-between items-end">
-                    <h2 className="text-2xl font-bold">50$</h2>
+                    <h2 className="text-2xl font-bold">{price}</h2>
                     {addedToCart ?
-                        <BsCartPlus className={"text-2xl"} onClick={() => setAddedToCart(false)}/>
+                        <BsCartFill className={"text-2xl cursor-pointer"} onClick={()=>router.push(`/products${url}`)}/>
                         :
-                        <BsCartFill className={"text-2xl"} onClick={() => setAddedToCart(true)}/>
+                        <BsCartPlus className={"text-2xl cursor-pointer"} onClick={()=>router.push(`/products${url}`)}/>
                     }
 
                 </div>
@@ -38,7 +49,7 @@ export default function ProductCard() {
                     checkout({
                     lineItems: [
                         {
-                            price: "price_1NfSITK1pNgR6R0d72Rw7NFj",
+                            price: {stripePrice},
                             quantity: 1
                         }
                     ]
