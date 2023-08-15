@@ -23,7 +23,7 @@ export default function ProductCard() {
                 <h2 className="card-title">XIAOMI MI BOX S MAX 4K ULTRA HD SMART 2
                 </h2>
                 <p>В упаковці:
-                    Xiaomi TV Box S (2 покоління): 1...
+                    Xiaomi TV Box S (2 покоління): 1....
                 </p>
                 <div className="card-actions flex justify-between items-end">
                     <h2 className="text-2xl font-bold">50$</h2>
