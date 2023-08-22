@@ -49,7 +49,7 @@ export default function ProductCard({url, image, title, description, price, stri
                     checkout({
                     lineItems: [
                         {
-                            price: {stripePrice},
+                            price: {stripePrice}.toString(),
                             quantity: 1
                         }
                     ]
