@@ -106,4 +106,20 @@ export const productsMap: ProductsMap = {
         price: "3000$",
         stripePrice: "price_1NhvVgK1pNgR6R0dPLwbJTme",
     },
+    ht_instruments_pv_isotest_wielofunkcyjne: {
+        url: "/ht_instruments_pv_isotest_wielofunkcyjne",
+        image: "/ht_instruments_pv_isotest_wielofunkcyjne.png",
+        title: "HT Instruments PV-ISOTEST - Wielofunkcyjne urządzenie do testowania bezpieczeństwa elektrycznego i rozwiązywania problemów systemów fotowoltaicznych",
+        description: "PV-ISOTEST stanowi prawdziwą innowację w zakresie weryfikacji i testowania fotowoltaiki. PV-ISOTEST mierzy rezystancję izolacji panelu fotowoltaicznego, łańcucha lub nawet całego zestawu fotowoltaicznego do 1500 VDC zgodnie z normą IEC / EN62446." ,
+        price: "2335$",
+        stripePrice: "price_1NiMv0K1pNgR6R0d32MJgk4Y",
+    },
+    sonel_mru_10_miernik_rezystancji_uziemienia_zestaw: {
+        url: "/sonel_mru_10_miernik_rezystancji_uziemienia_zestaw",
+        image: "/productImages/sonel_mru_10_miernik_rezystancji_uziemienia_zestaw.png",
+        title: "SONEL MRU-10 Miernik Rezystancji Uziemienia Zestaw",
+        description: "MRU-10 jest to prosty miernik, umożliwiający pomiar metodą techniczną oraz pomiar rezystancji uziemienia metodą dwubiegunową Podstawowe urządzenie pozwalające na sprawdzenie jakości układuuziemiającego na podstawie otrzymanego wyniku pomiaru." ,
+        price: "500$",
+        stripePrice: "price_1NiN2MK1pNgR6R0dTRY0gFSi",
+    },
 };
