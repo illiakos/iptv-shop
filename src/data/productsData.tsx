@@ -108,7 +108,7 @@ export const productsMap: ProductsMap = {
     },
     ht_instruments_pv_isotest_wielofunkcyjne: {
         url: "/ht_instruments_pv_isotest_wielofunkcyjne",
-        image: "/ht_instruments_pv_isotest_wielofunkcyjne.png",
+        image: "/productImages/ht_instruments_pv_isotest_wielofunkcyjne.png",
         title: "HT Instruments PV-ISOTEST - Wielofunkcyjne urządzenie do testowania bezpieczeństwa elektrycznego i rozwiązywania problemów systemów fotowoltaicznych",
         description: "PV-ISOTEST stanowi prawdziwą innowację w zakresie weryfikacji i testowania fotowoltaiki. PV-ISOTEST mierzy rezystancję izolacji panelu fotowoltaicznego, łańcucha lub nawet całego zestawu fotowoltaicznego do 1500 VDC zgodnie z normą IEC / EN62446." ,
         price: "2335$",
