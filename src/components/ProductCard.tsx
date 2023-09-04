@@ -52,14 +52,6 @@ export default function ProductCard({url, image, title, description, price, stri
                             price: `${stripePrice}`,
                             quantity: 1
                         },
-                        {
-                            price: `price_1NhvTmK1pNgR6R0d8EMxnTYF`,
-                            quantity: 1
-                        },
-                        {
-                            price: `price_1NhvP3K1pNgR6R0dyYmNYDmW`,
-                            quantity: 1
-                        }
                     ]
                     })
                 })}>Buy</button>
