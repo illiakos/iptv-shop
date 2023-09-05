@@ -6,8 +6,8 @@ export async function checkout({lineItems}) {
 
     const getStripe = () => {
         if (!stripePromise) {
-            //stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY)
-            stripePromise = loadStripe("pk_live_51Nea25K1pNgR6R0dpQaFejDEStMq7PdgzuRAnINu1Wx4wOX5IGtcuPRg1ABqzcn67ulgcaYMHVX9Ve2jaeebTrRt00yerPjemv")
+            stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY)
+            //stripePromise = loadStripe("pk_live_51Nea25K1pNgR6R0dpQaFejDEStMq7PdgzuRAnINu1Wx4wOX5IGtcuPRg1ABqzcn67ulgcaYMHVX9Ve2jaeebTrRt00yerPjemv")
         }
         return stripePromise
     }
