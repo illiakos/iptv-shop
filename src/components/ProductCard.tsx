@@ -68,9 +68,9 @@ export default function ProductCard({url, image, title, description, price, stri
                 {!addedToCart ? 
                 <button className={"btn btn-primary mt-4"} onClick={()=>addToCart()}>Add to cart</button>
                 :
-                <button className={"btn btn-outline mt-4"} onClick={()=>removeFromCart()}>Remove from cart</button>
+                <button className={"btn btn-outline mt-4"} onClick={()=>router.push("/checkout")}>Go to cart</button>
                 }
-            </div>
+            </div>  
         </div>
     )
 }

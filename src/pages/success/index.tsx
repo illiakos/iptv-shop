@@ -3,7 +3,7 @@
 import CartProductCard from '@/components/CartProductCard';
 import Navbar from '@/components/Navbar';
 import ProgressBar from '@/components/scroller/ProgressBar';
-import { CartItem, getCart, removeFromCartThunk } from '@/utilities/cart';
+import { CartItem, clearCart, getCart, removeFromCartThunk } from '@/utilities/cart';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
@@ -16,6 +16,7 @@ interface CheckoutPageProps {
 const Success: React.FC<CheckoutPageProps> = () => {
 
     useEffect(() => {
+        clearCart()
     }, []);
 
     return (
