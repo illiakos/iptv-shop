@@ -1,22 +1,42 @@
 import Image from "next/image";
 
 import {BsCartPlus, BsCartFill} from 'react-icons/bs';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import { checkout } from "../../checkout";
 import {useRouter} from "next/router";
+import {addToCartThunk, getCart, removeFromCartThunk } from "@/utilities/cart";
 
 interface ProductCardProps {
     url: string;
     image: string;
     title: string,
     description: string;
-    price: string;
+    price: number;
     stripePrice: string;
 }
 
 export default function ProductCard({url, image, title, description, price, stripePrice} :ProductCardProps) {
 
+    const addToCart = () => {
+        addToCartThunk(url.slice(1))
+        setAddedToCart(true)
+    }
+
+    const removeFromCart = () => {
+        removeFromCartThunk(url.slice(1))
+        setAddedToCart(false)
+    }
+
     const router = useRouter()
+
+    useEffect(() => {
+        const cart = getCart();
+        const cartItem = cart.find((item) => item.url === url);
+        if (cartItem) {
+           setAddedToCart(true)
+        }
+
+    }, []);
 
     const [addedToCart, setAddedToCart] = useState<boolean>(false)
     return(
@@ -37,24 +57,19 @@ export default function ProductCard({url, image, title, description, price, stri
                 <p className={"truncate cursor-pointer"} onClick={()=>router.push(`/products${url}`)}>{description}
                 </p>
                 <div className="card-actions flex justify-between items-end">
-                    <h2 className="text-2xl font-bold">{price}</h2>
+                    <h2 className="text-2xl font-bold">{price}$</h2>
                     {addedToCart ?
-                        <BsCartFill className={"text-2xl cursor-pointer"} onClick={()=>router.push(`/products${url}`)}/>
+                        <BsCartFill className={"text-2xl cursor-pointer"} onClick={()=>removeFromCart()}/>
                         :
-                        <BsCartPlus className={"text-2xl cursor-pointer"} onClick={()=>router.push(`/products${url}`)}/>
+                        <BsCartPlus className={"text-2xl cursor-pointer"} onClick={()=>addToCart()}/>
                     }
 
                 </div>
-                <button className={"btn btn-primary mt-4"} onClick={(() => {
-                    checkout({
-                    lineItems: [
-                        {
-                            price: `${stripePrice}`,
-                            quantity: 1
-                        },
-                    ]
-                    })
-                })}>Buy</button>
+                {!addedToCart ? 
+                <button className={"btn btn-primary mt-4"} onClick={()=>addToCart()}>Add to cart</button>
+                :
+                <button className={"btn btn-outline mt-4"} onClick={()=>removeFromCart()}>Remove from cart</button>
+                }
             </div>
         </div>
     )

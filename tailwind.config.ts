@@ -27,6 +27,8 @@ module.exports = {
         'blue-7': '#192438',
         'blue-8': '#151E2E',
         'error':'#F97364',
+        "neutral": "#1a1424",
+        "base-100": "#394146",
         'black-rgba':'rgba(0,0,0,0.90)'
       },
       backgroundImage: {

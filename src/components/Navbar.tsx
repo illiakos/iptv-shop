@@ -21,7 +21,7 @@ export default function Navbar() {
             </div>
             <ul className={"w-1/4 gap-4 lg:flex justify-end hidden"}>
                 <button className="btn btn-outline px-12">Contact us</button>
-                <button className="btn btn-primary px-12">Order</button>
+                <button className="btn btn-primary px-12" onClick={() => router.push("/checkout")}>Cart</button>
 
 
             </ul>
