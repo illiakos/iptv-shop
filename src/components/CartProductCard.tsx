@@ -83,7 +83,7 @@ export default function CartProductCard({
                     {description}
                 </p>
                 <div className="card-actions flex justify-between items-end">
-                    <h2 className="text-2xl font-bold">{price}$</h2>
+                    <h2 className="text-2xl font-bold">{price}€</h2>
                 </div>
                 <div className="flex justify-between mt-4">
                     <div className='flex gap-4 items-center'>

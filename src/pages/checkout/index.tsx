@@ -85,7 +85,7 @@ const Checkout: React.FC<CheckoutPageProps> = () => {
                 <div className='flex md:flex-row flex-col justify-center gap-8'>
                     <div className='self-center flex gap-4 mt-4'>
                         <p className='text-2xl '>Sum: </p>
-                        <p className='font-semibold text-2xl '>{totalSum}$</p>
+                        <p className='font-semibold text-2xl '>{totalSum}€</p>
                     </div>
                     <button className='btn-primary p-4 mt-4 self-center rounded-xl px-16'
                     onClick={handleCheckout}>

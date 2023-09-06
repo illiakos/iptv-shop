@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import {useRouter} from "next/router";
-import {FC} from "react";
+import {FC, useEffect, useState} from "react";
 import Navbar from "@/components/Navbar";
 import {productsMap} from "@/data/productsData";
 import {checkout} from "../../../checkout";
 import {IoArrowBackSharp} from "react-icons/io5";
+import { addToCartThunk, getCart, removeFromCartThunk } from '@/utilities/cart';
 
 
 const ProductPage: FC = () => {
@@ -13,6 +14,16 @@ const ProductPage: FC = () => {
     const {productKey} = router.query;
     console.log(typeof productKey !== 'string')
 
+    useEffect(() => {
+        const cart = getCart();
+        const cartItem = cart.find((item) => item.url === product.url);
+        if (cartItem) {
+           setAddedToCart(true)
+        }
+
+    }, []);
+
+    const [addedToCart, setAddedToCart] = useState<boolean>(false)
     // Check if the projectId is a string
     if (typeof productKey !== 'string') {
         return <div>Loading...</div>; // Handle loading state or error
@@ -25,6 +36,16 @@ const ProductPage: FC = () => {
         return <div>Project not found</div>;
     }
 
+
+    const addToCart = () => {
+        addToCartThunk(product.url.slice(1))
+        setAddedToCart(true)
+    }
+
+    const removeFromCart = () => {
+        removeFromCartThunk(product.url.slice(1))
+        setAddedToCart(false)
+    }
 
     return (
         <main className={"flex flex-col max-w-screen min-h-screen bg-bg"}>
@@ -58,18 +79,13 @@ const ProductPage: FC = () => {
                         </h3>
                     </div>
                     <div className={"flex justify-between items-center flex-row-reverse mt-8"}>
-                        <button className={"btn btn-primary mt-4 px-24 "} onClick={(() => {
-                            checkout({
-                                lineItems: [
-                                    {
-                                        price: `${product.stripePrice}`,
-                                        quantity: 1
-                                    }
-                                ]
-                            })
-                        })}>Buy</button>
+                    {!addedToCart ? 
+                <button className={"btn btn-primary mt-4 px-16"} onClick={()=>addToCart()}>Add to cart</button>
+                :
+                <button className={"btn btn-outline mt-4 px-16"} onClick={()=>router.push("/checkout")}>Go to cart</button>
+                }
                         <h3 className={"text-5xl font-primary text-white font-bold "}>
-                            {product.price}
+                            {product.price}€
                         </h3>
                     </div>
                 </div>

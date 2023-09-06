@@ -57,7 +57,7 @@ export default function ProductCard({url, image, title, description, price, stri
                 <p className={"truncate cursor-pointer"} onClick={()=>router.push(`/products${url}`)}>{description}
                 </p>
                 <div className="card-actions flex justify-between items-end">
-                    <h2 className="text-2xl font-bold">{price}$</h2>
+                    <h2 className="text-2xl font-bold">{price}€</h2>
                     {addedToCart ?
                         <BsCartFill className={"text-2xl cursor-pointer"} onClick={()=>removeFromCart()}/>
                         :
