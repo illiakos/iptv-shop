@@ -122,4 +122,28 @@ export const productsMap: ProductsMap = {
         price: 500,
         stripePrice: "price_1NnPl7K1pNgR6R0dzIH4GcWO",
     },
+    telewizor_led_samsung_43_4k: {
+        url: "/telewizor_led_samsung_43_4k",
+        image: "/productImages/telewizor_led_samsung_43_4k.png",
+        title: "Telewizor LED Samsung 43\" 4K SMART TV UHD",
+        description: "Telewizor LED Samsung 43\" 4K SMART TV UHD" ,
+        price: 300,
+        stripePrice: "price_1Nt222K1pNgR6R0dcOIfiBLK",
+    },
+    telewizor_chiq_65_4k: {
+        url: "/telewizor_chiq_65_4k",
+        image: "/productImages/telewizor_chiq_65_4k.png",
+        title: "Telewizor LED CHiQ U65H7C 65\" 4K UHD czarny",
+        description: "Telewizor LED CHiQ U65H7C 65\" 4K UHD czarny" ,
+        price: 500,
+        stripePrice: "price_1Nt24mK1pNgR6R0ddbA3eUk9",
+    },
+    samsung_qled_qe55q80cat: {
+        url: "/samsung_qled_qe55q80cat",
+        image: "/productImages/samsung_qled_qe55q80cat.png",
+        title: "Telewizor QLED Samsung QE55Q80C 55\" 4K UHD szary",
+        description: "Telewizor QLED Samsung QE55Q80C 55\" 4K UHD szary" ,
+        price: 750,
+        stripePrice: "price_1Nt26kK1pNgR6R0dEvBgQmq4",
+    },
 };
